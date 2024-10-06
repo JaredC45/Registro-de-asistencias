@@ -10,14 +10,18 @@ namespace tarea1
             Universidad universidad = new Universidad();
             Console.WriteLine("Ingrese el nombre del estudiante:");
             Universidad.Estudiante.Nombre = Console.ReadLine();
+            do
+            {
+                Console.WriteLine($"Ingrese el numero de sesiones totales del curso de: {Universidad.Estudiante.Nombre}");
+                Universidad.Estudiante.SesionesT = Convert.ToInt32(Console.ReadLine());
+            } while ( Universidad.Estudiante.SesionesT<=0 );
 
-            Console.WriteLine($"Ingrese el numero de sesiones totales del curso de: {Universidad.Estudiante.Nombre}");
-            Universidad.Estudiante.SesionesT = Convert.ToInt32(Console.ReadLine());
+            do
+            {
+                Console.WriteLine($"Ingrese el numero de asistencias de: {Universidad.Estudiante.Nombre}");
+                Universidad.Estudiante.SesionesA = Convert.ToInt32(Console.ReadLine());
+            } while (Universidad.Estudiante.SesionesA < 0);
 
-            Console.WriteLine($"Ingrese el numero de asistencias de: {Universidad.Estudiante.Nombre}");
-            Universidad.Estudiante.SesionesA = Convert.ToInt32(Console.ReadLine());
-
-            
             Universidad.Estudiante.Asistencia.PrintMetodo();
         }
     }
